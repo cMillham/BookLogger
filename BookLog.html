@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+
+        <style>
+            h1 {
+                color:rgb(68, 3, 130);
+                text-align: center;
+                font-size: 80px;
+            }
+
+            h2 {
+                color:rgb(68, 3, 130);
+                text-align: left;
+                font-size: 60px;
+                padding-top: 40px;
+                padding-left: 30px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Welcome to Chloe's Book Log!</h1>
+
+        <form method="POST" action="/addbook">
+            <button type="submit" class="button" name="btnAddBook">Add a book</button>
+        </form>
+
+        <h2>My Bookshelf</h2>
+
+        <!-- creates bookshelf entries -->
+        <section class="layout">
+            {% for x in testing %}
+                <div><a href="/viewbook?bookid={{x.0}}"><bookCover class="bookCover">{{ x.2 }}</bookCover></a></div> 
+            {% endfor %}
+
+        </section>
+    </body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+
+        <style>
+            h1 {
+                color:rgb(68, 3, 130);
+                text-align: center;
+                font-size: 80px;
+            }
+
+            h2 {
+                color:rgb(68, 3, 130);
+                text-align: left;
+                font-size: 60px;
+                padding-top: 40px;
+                padding-left: 30px;
+            }
+            textArea {
+                width: 400px;
+                height: 23px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Add a Book</h1>
+        <p style="text-align: center; font-size: 30px"><a href="/">Back to Bookshelf</a></p>
+        <br /><br /><br />
+    <form method="POST" action="/post">
+        <label for="title" style="padding-left: 50px; font-size: 40px; padding-right: 20px; padding-top: 10px">Title:</label>
+        <textArea type="text" id="title" name="title" minlength="1" style="font-size: 20px;"></textArea>
+
+        <label for="author" style="padding-left: 50px; font-size: 40px; padding-right: 20px; padding-top: 10px; padding-left: 200px">Author:</label>
+        <textArea type="text" id="author" name="author" style="font-size: 20px"></textArea>
+
+
+        
+        <div class="rating" style="margin-top: 100px; margin-left: 50px;">
+            <label for="rating" style="margin-top: 100px; font-size: 40px;">Rating:</label>
+            <input id="rating1" type="radio" name="rating" value="1">
+            <label for="rating1">1</label>
+            <input id="rating2" type="radio" name="rating" value="2">
+            <label for="rating2">2</label>
+            <input id="rating3" type="radio" name="rating" value="3">
+            <label for="rating3">3</label>
+            <input id="rating4" type="radio" name="rating" value="4">
+            <label for="rating4">4</label>
+            <input id="rating5" type="radio" name="rating" value="5">
+            <label for="rating5">5</label>
+          </div>
+
+        <div class="dateRead" style="padding-left: 50px; font-size: 40px; padding-right: 20px; padding-top: 60px;">
+            <label for="dateRead">Date Read:</label>
+            <input type="datetime-local" id="dateRead" name="dateRead" style="width: 120px; height: 40px">
+        </div>
+
+        <div style="padding-left: 50px; font-size: 40px; padding-right: 20px; padding-top: 60px;">
+            <label for="review">Review:</label>
+            <textarea id="review" name="review" rows="30" cols="200"></textarea>
+        </div>
+
+        <div class="coverColor" style="padding-left: 50px; font-size: 40px; padding-right: 20px; padding-top: 60px;">
+            <label for="coverColor">Cover color:</label>
+            <select name="coverColor" id="coverColor" style="width: 100px; height: 40px">
+            <option value="red">Red</option>
+            <option value="orange">Orange</option>
+            <option value="yellow">Yellow</option>
+            <option value="green">Green</option>
+            <option value="blue">Blue</option>
+            <option value="purple">Purple</option>
+            <option value="black">Black</option>
+            <option value="white">White</option>
+        </select>
+
+        <div>
+            <input type="submit" style="width: 200px; height: 60px; font-size: 40px; margin-left: 800px; margin-top: 60px">
+        </div>
+    </form>
+
+    </body>
+</html>
